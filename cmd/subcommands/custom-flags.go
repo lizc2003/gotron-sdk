@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/fbsobreira/gotron-sdk/pkg/address"
+	"github.com/lizc2003/gotron-sdk/pkg/address"
 	"github.com/pkg/errors"
 )
 

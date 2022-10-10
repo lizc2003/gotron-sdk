@@ -2,15 +2,15 @@ package keys
 
 import (
 	"fmt"
+	"github.com/decred/dcrd/dcrec/secp256k1/v4"
 
-	"github.com/btcsuite/btcd/btcec"
-	secp256k1 "github.com/btcsuite/btcd/btcec"
-	"github.com/fbsobreira/gotron-sdk/pkg/keys/hd"
+	"github.com/btcsuite/btcd/btcec/v2"
+	"github.com/lizc2003/gotron-sdk/pkg/keys/hd"
 	"github.com/tyler-smith/go-bip39"
 )
 
 // FromMnemonicSeedAndPassphrase derive form mnemonic and passphrase at index
-func FromMnemonicSeedAndPassphrase(mnemonic, passphrase string, index int) (*secp256k1.PrivateKey, *secp256k1.PublicKey) {
+func FromMnemonicSeedAndPassphrase(mnemonic, passphrase string, index int) (*btcec.PrivateKey, *secp256k1.PublicKey) {
 	seed := bip39.NewSeed(mnemonic, passphrase)
 	master, ch := hd.ComputeMastersFromSeed(seed, []byte("Bitcoin seed"))
 	private, _ := hd.DerivePrivateKeyForPath(
@@ -20,5 +20,5 @@ func FromMnemonicSeedAndPassphrase(mnemonic, passphrase string, index int) (*sec
 		fmt.Sprintf("44'/195'/0'/0/%d", index),
 	)
 
-	return secp256k1.PrivKeyFromBytes(secp256k1.S256(), private[:])
+	return btcec.PrivKeyFromBytes(private[:])
 }

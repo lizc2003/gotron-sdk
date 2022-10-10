@@ -3,9 +3,9 @@ package client
 import (
 	"fmt"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
+	"github.com/lizc2003/gotron-sdk/pkg/common"
+	"github.com/lizc2003/gotron-sdk/pkg/proto/api"
+	"github.com/lizc2003/gotron-sdk/pkg/proto/core"
 	"github.com/golang/protobuf/proto"
 )
 

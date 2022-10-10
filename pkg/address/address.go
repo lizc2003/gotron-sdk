@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"crypto/ecdsa"
 	"encoding/base64"
+	"github.com/ethereum/go-ethereum/crypto"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
+	"github.com/lizc2003/gotron-sdk/pkg/common"
 )
 
 const (

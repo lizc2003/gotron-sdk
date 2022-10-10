@@ -3,6 +3,7 @@ package account
 import (
 	"encoding/hex"
 	"fmt"
+	"github.com/btcsuite/btcd/btcec/v2"
 	"io"
 	"io/ioutil"
 	"os"
@@ -11,12 +12,11 @@ import (
 
 	"github.com/mitchellh/go-homedir"
 
-	"github.com/btcsuite/btcd/btcec"
 	mapset "github.com/deckarep/golang-set"
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/keystore"
-	"github.com/fbsobreira/gotron-sdk/pkg/mnemonic"
-	"github.com/fbsobreira/gotron-sdk/pkg/store"
+	"github.com/lizc2003/gotron-sdk/pkg/common"
+	"github.com/lizc2003/gotron-sdk/pkg/keystore"
+	"github.com/lizc2003/gotron-sdk/pkg/mnemonic"
+	"github.com/lizc2003/gotron-sdk/pkg/store"
 )
 
 // ImportFromPrivateKey allows import of an ECDSA private key
@@ -41,7 +41,7 @@ func ImportFromPrivateKey(privateKey, name, passphrase string) (string, error) {
 	}
 
 	// btcec.PrivKeyFromBytes only returns a secret key and public key
-	sk, _ := btcec.PrivKeyFromBytes(btcec.S256(), privateKeyBytes)
+	sk, _ := btcec.PrivKeyFromBytes(privateKeyBytes)
 	ks := store.FromAccountName(name)
 	_, err = ks.ImportECDSA(sk.ToECDSA(), passphrase)
 	return name, err

@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/account"
-	"github.com/fbsobreira/gotron-sdk/pkg/address"
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
+	"github.com/lizc2003/gotron-sdk/pkg/account"
+	"github.com/lizc2003/gotron-sdk/pkg/address"
+	"github.com/lizc2003/gotron-sdk/pkg/common"
+	"github.com/lizc2003/gotron-sdk/pkg/proto/api"
+	"github.com/lizc2003/gotron-sdk/pkg/proto/core"
 	"github.com/golang/protobuf/proto"
 )
 
